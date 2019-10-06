@@ -1,0 +1,23 @@
+{
+  "name": "@kseirin/the-game",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "mocha ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kseirin/the-game.git"
+  },
+  "author": "@kseirin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kseirin/the-game/issues"
+  },
+  "homepage": "https://github.com/kseirin/the-game#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1"
+  }
+}
