@@ -1,0 +1,6 @@
+{
+  "name": "@kseirin/event-emitter",
+  "version": "1.0.0",
+  "main": "EventEmitter.js",
+  "dependencies": {}
+}

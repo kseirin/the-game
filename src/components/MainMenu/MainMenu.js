@@ -1,29 +1,22 @@
 'use strict';
 
+import State from '../../State/State';
+
 class MainMenu extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
-    console.log(`Main Menu Is Connected`);
-    this.innerHTML = `<div class="main-menu">
-Main Menu
-</div>`;
+    this.classList.add('main-menu');
+    this.render();
   }
 
   disconnectedCallback() {
-    console.log(`Main Menu Is Disconnected`);
   }
 
-  attributeChangedCallback(attrName, oldVal, newVal) {
-    console.log(`Attribute ${attrName} changed`);
-    console.log('> oldVal >>>', oldVal);
-    console.log('> newVal >>>', newVal);
-  }
-
-  static makeElement() {
-    return document.createElement('main-menu');
+  render() {
+    this.textContent = `Main Menu`;
   }
 }
 
