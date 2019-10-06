@@ -1,6 +1,6 @@
 'use strict';
 
-import EventEmitter from '@kseirin/event-emitter';
+import EventEmitter from '../modules/EventEmitter/EventEmitter';
 
 /**
  * @class State
