@@ -11,4 +11,4 @@ const StateEventEnum = [
   'change'
 ];
 
-export default StateEventEnum;
+module.exports = StateEventEnum;

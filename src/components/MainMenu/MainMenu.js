@@ -1,6 +1,6 @@
 'use strict';
 
-import State from '../../State/State';
+const State = require('../../State/State');
 
 class MainMenu extends HTMLElement {
   constructor() {
@@ -22,4 +22,4 @@ class MainMenu extends HTMLElement {
 
 customElements.define('main-menu', MainMenu);
 
-export default MainMenu;
+module.exports = MainMenu;

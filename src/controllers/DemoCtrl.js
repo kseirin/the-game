@@ -1,6 +1,6 @@
 'use strict';
 
-import LogsCtrl from './LogsCtrl';
+const LogsCtrl = require('./LogsCtrl');
 
 /**
  * @class DemoCtrl
@@ -21,4 +21,4 @@ class DemoCtrl {
   }
 }
 
-export default new DemoCtrl();
+module.exports = new DemoCtrl();

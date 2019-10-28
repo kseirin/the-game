@@ -1,6 +1,6 @@
 'use strict';
 
-import MainMenu from './components/MainMenu/MainMenu';
+const MainMenu = require('./components/MainMenu/MainMenu');
 
 const appNode = document.getElementById('app');
 const mainMenu = new MainMenu();

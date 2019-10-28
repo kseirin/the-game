@@ -1,6 +1,6 @@
 'use strict';
 
-import EventEmitter from '../modules/EventEmitter/EventEmitter';
+const EventEmitter = require('../modules/EventEmitter/EventEmitter');
 
 /**
  * @class State
@@ -38,4 +38,4 @@ class State {
   }
 }
 
-export default new State();
+module.exports = new State();

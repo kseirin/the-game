@@ -12,4 +12,4 @@ class LogsCtrl {
   }
 }
 
-export default new LogsCtrl();
+module.exports = new LogsCtrl();

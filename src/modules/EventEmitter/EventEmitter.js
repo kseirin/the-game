@@ -2,62 +2,36 @@
 
 /**
  * @class EventEmitter
- * @property {Object} eventsMap объект, ключами которого являются имена событий, а значения - массивами слушателей
+ * @property {HTMLDivElement} node
  */
 class EventEmitter {
   constructor() {
-    this.eventsMap = {};
+    this.node = document.createElement('div');
   }
 
   /**
-   * Установка слушателя на событие
-   * @param {String} event имя события
-   * @param {Function} callback слушатель
+   * @param {String} event
+   * @param {Function} callback
    */
   on(event, callback) {
-    const eventsQueue = this.getCallbacksQueue(event);
-    eventsQueue.push(callback);
+    this.node.addEventListener(event, callback);
   }
 
   /**
-   * Удаление слушателей с события
-   * Если слушатель указан, то будет удалён только он
-   * Усли слушатель не указан, то будут удалены все слушатели указанного события
-   * @param {String} event имя события
-   * @param {Function=} callback слушатель
-   * @returns {Array<Function>} массив удалённых слушателей
+   * @param {String} event
+   * @param {Function} callback
    */
   off(event, callback) {
-    const eventsQueue = this.getCallbacksQueue(event);
-    if (!callback) return eventsQueue.splice(0, eventsQueue.length);
-    const result = [];
-    let index = eventsQueue.indexOf(callback);
-    while (~index) {
-      result.push(eventsQueue.splice(index, 1));
-      index = eventsQueue.indexOf(callback);
-    }
-    return result;
+    this.node.removeEventListener(event, callback);
   }
 
   /**
-   * Получение всех слушателей по имени события
-   * @param {String} event имя события
-   * @returns {Array<Function>} массив установленных слушателей
+   * @param {String} event
+   * @param {Object=} detail
    */
-  getCallbacksQueue(event) {
-    if (!this.eventsMap.hasOwnProperty(event)) this.eventsMap[event] = [];
-    return this.eventsMap[event];
-  }
-
-  /**
-   * @param {String} event имя события
-   * @param {Object=} eventData данные, передаваемые в событие
-   */
-  dispatch(event, eventData) {
-    eventData = eventData || {};
-    const eventsQueue = this.getCallbacksQueue(event);
-    eventsQueue.forEach(callback => callback({data: eventData}));
+  dispatch(event, detail) {
+    this.node.dispatchEvent(new CustomEvent(event, {detail}));
   }
 }
 
-export default EventEmitter;
+module.exports = EventEmitter;
