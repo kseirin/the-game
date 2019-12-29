@@ -1,0 +1,8 @@
+{
+  "name": "@kseirin/state",
+  "version": "1.0.0",
+  "description": "State",
+  "main": "State.js",
+  "author": "@kseirin",
+  "license": "MIT"
+}

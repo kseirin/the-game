@@ -1,9 +1,11 @@
+/** @namespace kseirin.State */
 'use strict';
 
 /**
+ * @memberOf kseirin.State
  * @property {Avatar} avatar
  */
-class StateAvatar {
+class StateBattlefield {
   constructor() {
     this.current = null;
   }
@@ -13,4 +15,4 @@ class StateAvatar {
   }
 }
 
-module.exports = StateAvatar;
+module.exports = StateBattlefield;

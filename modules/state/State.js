@@ -1,18 +1,26 @@
+/** @namespace kseirin.State */
 'use strict';
 
 const EventEmitter = require('@kseirin/event-emitter');
+const StateAvatar = require('./StateAvatar');
+const StateBattlefield = require('./StateBattlefield');
 
 /**
+ * @memberOf kseirin.State
  * @property {kseirin.EventEmitter} eventEmitter
+ * @property {kseirin.State.StateAvatar} avatar
+ * @property {kseirin.State.StateBattlefield} battlefield
  */
 class State {
   constructor() {
     this.eventEmitter = new EventEmitter();
     this.avatar = new StateAvatar();
+    this.battlefield = new StateBattlefield();
   }
 
   reset() {
     this.avatar.reset();
+    this.battlefield.reset();
   }
 
   /**

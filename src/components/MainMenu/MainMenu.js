@@ -1,6 +1,6 @@
 'use strict';
 
-const State = require('../../State/State');
+const State = require('@kseirin/state');
 
 class MainMenu extends HTMLElement {
   constructor() {

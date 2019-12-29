@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kseirin/the-game#readme",
   "dependencies": {
     "@kseirin/event-emitter": "file:./modules/event-emitter",
+    "@kseirin/state": "file:./modules/state",
     "gulp": "^4.0.2",
     "gulp-less": "^4.0.1",
     "mocha": "^6.2.2"
