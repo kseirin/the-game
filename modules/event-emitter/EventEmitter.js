@@ -1,7 +1,8 @@
-'use strict';
+/** @namespace kseirin
+ 'use strict';
 
-/**
- * @class EventEmitter
+ /**
+ * @memberOf kseirin
  * @property {HTMLDivElement} node
  */
 class EventEmitter {

@@ -1,0 +1,8 @@
+{
+  "name": "@kseirin/event-emitter",
+  "version": "1.0.0",
+  "description": "EventEmitter",
+  "main": "EventEmitter.js",
+  "author": "@kseirin",
+  "license": "MIT"
+}

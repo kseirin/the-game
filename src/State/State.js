@@ -1,17 +1,18 @@
 'use strict';
 
-const EventEmitter = require('../modules/EventEmitter/EventEmitter');
+const EventEmitter = require('@kseirin/event-emitter');
 
 /**
- * @class State
- * @property {EventEmitter} eventEmitter
+ * @property {kseirin.EventEmitter} eventEmitter
  */
 class State {
   constructor() {
     this.eventEmitter = new EventEmitter();
+    this.avatar = new StateAvatar();
   }
 
   reset() {
+    this.avatar.reset();
   }
 
   /**
