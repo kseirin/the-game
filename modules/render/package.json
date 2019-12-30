@@ -1,0 +1,8 @@
+{
+  "name": "@kseirin/render",
+  "version": "1.0.0",
+  "description": "Render",
+  "main": "Render.js",
+  "author": "@kseirin",
+  "license": "MIT"
+}

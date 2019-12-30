@@ -3,7 +3,7 @@
 
 /**
  * @memberOf kseirin.State
- * @property {Battlefield} avatar
+ * @property {Battlefield} current
  */
 class StateBattlefield {
   constructor() {

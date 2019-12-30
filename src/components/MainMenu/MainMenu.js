@@ -1,7 +1,8 @@
 'use strict';
 
-const State = require('@kseirin/state');
-
+/**
+ * @extends HTMLElement
+ */
 class MainMenu extends HTMLElement {
   constructor() {
     super();
