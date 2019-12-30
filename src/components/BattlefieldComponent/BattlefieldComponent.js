@@ -30,6 +30,7 @@ class BattlefieldComponent extends HTMLElement {
 
   disconnectedCallback() {
     State.off('change', this.renderCallback);
+    this.action.removeEventListener('click', BattlefieldCtrl.attack);
   }
 
   render() {
