@@ -1,0 +1,8 @@
+{
+  "name": "@kseirin/controllers",
+  "version": "1.0.0",
+  "description": "Controllers",
+  "main": "Controllers.js",
+  "author": "@kseirin",
+  "license": "MIT"
+}

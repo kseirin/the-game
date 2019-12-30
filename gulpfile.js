@@ -37,7 +37,7 @@ function js() {
 }
 
 function watchJs() {
-  return gulp.watch('src/**/*.js', js);
+  return gulp.watch(['src/**/*.js', 'modules/**/*.js'], js);
 }
 
 exports.default = gulp.parallel(html, css, js);

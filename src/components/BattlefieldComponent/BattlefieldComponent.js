@@ -2,16 +2,20 @@
 
 const Render = require('@kseirin/render');
 const State = require('@kseirin/state');
+const BattlefieldCtrl = require('@kseirin/controllers').BattlefieldCtrl;
 
 class BattlefieldComponent extends HTMLElement {
   constructor() {
     super();
     this.player = document.createElement('pre');
     this.enemy = document.createElement('pre');
+    this.action = document.createElement('button');
+    this.action.textContent = 'Attack!';
     this.renderCallback = null;
     this.components = [
       this.player,
-      this.enemy
+      this.enemy,
+      this.action
     ];
   }
 
@@ -21,6 +25,7 @@ class BattlefieldComponent extends HTMLElement {
     this.render();
 
     State.on('change', this.renderCallback = () => this.render());
+    this.action.addEventListener('click', BattlefieldCtrl.attack);
   }
 
   disconnectedCallback() {
