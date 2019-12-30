@@ -3,6 +3,10 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
 
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
 function html() {
   return gulp.src('src/index.html')
              .pipe(gulp.dest('dist'));
@@ -23,8 +27,13 @@ function watchCss() {
 }
 
 function js() {
-  return gulp.src('src/**/*.js')
-             .pipe(gulp.dest('dist'));
+  return browserify({
+    entries: 'src/app.js',
+    debug: false
+  }).bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest('dist'));
 }
 
 function watchJs() {
