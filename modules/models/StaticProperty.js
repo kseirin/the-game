@@ -1,11 +1,13 @@
+/** @namespace kseirin.Models */
 'use strict';
 
 /**
+ * @memberOf kseirin.Models
  * @property {Number} value
  */
 class StaticProperty {
   /**
-   * @param {(StaticProperty|Object)} data
+   * @param {(kseirin.Models.StaticProperty|Object)} data
    * @param {Number} data.value
    */
   constructor(data) {

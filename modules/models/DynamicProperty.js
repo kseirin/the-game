@@ -1,12 +1,14 @@
+/** @namespace kseirin.Models */
 'use strict';
 
 /**
+ * @memberOf kseirin.Models
  * @property {Number} maxValue
  * @property {Number} currentValue
  */
 class DynamicProperty {
   /**
-   * @param {(DynamicProperty|Object)} data
+   * @param {(kseirin.Models.DynamicProperty|Object)} data
    * @param {Number} data.maxValue
    * @param {Number} data.currentValue
    */

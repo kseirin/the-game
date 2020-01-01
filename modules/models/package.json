@@ -1,0 +1,8 @@
+{
+  "name": "@kseirin/models",
+  "version": "1.0.0",
+  "description": "Models",
+  "main": "Models.js",
+  "author": "@kseirin",
+  "license": "MIT"
+}

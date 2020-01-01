@@ -1,14 +1,15 @@
+/** @namespace kseirin.Controllers */
 'use strict';
 
 const State = require('@kseirin/state');
-const Avatar = require('../models/Avatar');
-const Enemy = require('../models/Enemy');
-const Battlefield = require('../models/Battlefield');
-const StaticProperty = require('../models/StaticProperty');
-const DynamicProperty = require('../models/DynamicProperty');
+const Avatar = require('@kseirin/models').Avatar;
+const Enemy = require('@kseirin/models').Enemy;
+const Battlefield = require('@kseirin/models').Battlefield;
+const StaticProperty = require('@kseirin/models').StaticProperty;
+const DynamicProperty = require('@kseirin/models').DynamicProperty;
 
 /**
- * @class BootstrapCtrl
+ * @memberOf kseirin.Controllers
  */
 class BootstrapCtrl {
   /**
@@ -35,7 +36,7 @@ class BootstrapCtrl {
   }
 
   /**
-   * @return {Enemy}
+   * @return {kseirin.Models.Enemy}
    */
   makeEnemy() {
     return new Enemy({
@@ -50,7 +51,7 @@ class BootstrapCtrl {
   }
 
   /**
-   * @param {Enemy} enemy
+   * @param {kseirin.Models.Enemy} enemy
    */
   initBattlefield(enemy) {
     State.battlefield.current = new Battlefield({

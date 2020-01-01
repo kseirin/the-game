@@ -1,7 +1,7 @@
 'use strict';
 
+const BootstrapCtrl = require('@kseirin/controllers').BootstrapCtrl;
 const GameRoot = require('./components/GameRoot/GameRoot');
-const BootstrapCtrl = require('./controllers/BootstrapCtrl');
 
 BootstrapCtrl.load().then(runApp);
 
