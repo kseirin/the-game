@@ -3,12 +3,13 @@
 const Render = require('@kseirin/render');
 const State = require('@kseirin/state');
 const BattlefieldCtrl = require('@kseirin/controllers').BattlefieldCtrl;
+const AvatarView = require('../AvatarView/AvatarView');
 
 class BattlefieldComponent extends HTMLElement {
   constructor() {
     super();
-    this.player = document.createElement('pre');
-    this.enemy = document.createElement('pre');
+    this.player = new AvatarView(State.battlefield.current.player);
+    this.enemy = new AvatarView(State.battlefield.current.enemy);
     this.action = document.createElement('button');
     this.action.textContent = 'Attack!';
     this.renderCallback = null;
@@ -34,8 +35,7 @@ class BattlefieldComponent extends HTMLElement {
   }
 
   render() {
-    this.player.textContent = JSON.stringify(State.battlefield.current.player, null, 2);
-    this.enemy.textContent = JSON.stringify(State.battlefield.current.enemy, null, 2);
+    Render.updateState(this, this.components);
   }
 }
 

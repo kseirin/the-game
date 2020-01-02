@@ -12,6 +12,14 @@ class Render {
   render(node, components) {
     components.forEach(component => node.appendChild(component));
   }
+
+  /**
+   * @param {HTMLElement} node
+   * @param {Array<HTMLElement>} components
+   */
+  updateState(node, components) {
+    components.forEach(component => component.render && component.render());
+  }
 }
 
 module.exports = new Render();
