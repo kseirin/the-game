@@ -1,8 +1,11 @@
 'use strict';
 
 const Render = require('@kseirin/render');
-const State = require('@kseirin/state');
+const DynamicPropertyBar = require('../DynamicPropertyBar/DynamicPropertyBar');
 
+/**
+ * @property {kseirin.Models.Avatar} avatar
+ */
 class AvatarView extends HTMLElement {
   /**
    * @param {kseirin.Models.Avatar} avatar
@@ -11,13 +14,17 @@ class AvatarView extends HTMLElement {
     super();
     this.avatar = avatar;
     this.view = document.createElement('pre');
+    this.hp = new DynamicPropertyBar(avatar.hp);
     this.components = [
-      this.view
+      this.view,
+      this.hp
     ];
   }
 
   setAvatar(avatar) {
     this.avatar = avatar;
+    this.hp = new DynamicPropertyBar(avatar.hp);
+    Render.render(this, this.components);
     this.render();
   }
 
@@ -28,6 +35,7 @@ class AvatarView extends HTMLElement {
   }
 
   render() {
+    Render.updateState(this, this.components);
     this.view.textContent = JSON.stringify(this.avatar, null, 2);
   }
 }

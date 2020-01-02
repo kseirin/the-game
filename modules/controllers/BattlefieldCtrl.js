@@ -12,6 +12,7 @@ class BattlefieldCtrl {
     const power = player.strength.value;
     const enemy = State.battlefield.current.enemy;
     enemy.hp.currentValue -= power;
+    if (enemy.hp.currentValue < 0) enemy.hp.currentValue = 0;
     State.dispatch('change');
   }
 }
