@@ -11,7 +11,7 @@ const DynamicProperty = require('./DynamicProperty');
  */
 class Enemy {
   /**
-   * @param {(kseirin.Models.Enemy|Object)} data
+   * @param {(kseirin.Models.Avatar|Object)} data
    * @param {kseirin.Models.DynamicProperty} data.hp
    * @param {kseirin.Models.StaticProperty} data.strength
    */

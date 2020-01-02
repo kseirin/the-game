@@ -4,13 +4,13 @@
 /**
  * @memberOf kseirin.Models
  * @property {kseirin.Models.Avatar} player
- * @property {kseirin.Models.Enemy} enemy
+ * @property {kseirin.Models.Avatar} enemy
  */
 class Battlefield {
   /**
    * @param {(kseirin.Models.Battlefield|Object)} data
    * @param {kseirin.Models.Avatar=} data.player
-   * @param {kseirin.Models.Enemy=} data.enemy
+   * @param {kseirin.Models.Avatar=} data.enemy
    */
   constructor(data) {
     this.player = data.player || null;

@@ -21,7 +21,7 @@ class BattlefieldComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add('game-root');
+    this.classList.add('battlefield-component');
     Render.render(this, this.components);
     this.render();
 

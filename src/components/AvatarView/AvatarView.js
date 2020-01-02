@@ -13,33 +13,40 @@ class AvatarView extends HTMLElement {
   constructor(avatar) {
     super();
     this.avatar = avatar;
-    this.view = document.createElement('pre');
-    this.hp = new DynamicPropertyBar(avatar.hp);
+    this.name = document.createElement('div');
+    this.name.classList.add('avatar-view_name');
+    this.hp = new DynamicPropertyBar(avatar.hp, {
+      label: 'hp:',
+      color: '#990000'
+    });
     this.components = [
-      this.view,
+      this.name,
       this.hp
     ];
   }
 
   setAvatar(avatar) {
     this.avatar = avatar;
-    this.hp = new DynamicPropertyBar(avatar.hp);
+    this.hp = new DynamicPropertyBar(avatar.hp, {
+      label: 'hp:',
+      color: '#990000'
+    });
     Render.render(this, this.components);
     this.render();
   }
 
   connectedCallback() {
-    this.classList.add('player-view');
+    this.classList.add('avatar-view');
     Render.render(this, this.components);
     this.render();
   }
 
   render() {
     Render.updateState(this, this.components);
-    this.view.textContent = JSON.stringify(this.avatar, null, 2);
+    this.name.textContent = this.avatar.name;
   }
 }
 
-customElements.define('player-view', AvatarView);
+customElements.define('avatar-view', AvatarView);
 
 module.exports = AvatarView;
