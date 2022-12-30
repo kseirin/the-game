@@ -25,7 +25,7 @@
     "browserify": "^16.5.0",
     "gulp": "^4.0.2",
     "gulp-less": "^4.0.1",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   }
